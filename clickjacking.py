@@ -14,7 +14,7 @@ for url in urls:
     r = requests.get(url, headers=headers)
     if r.status_code == 200:
         if 'X-Frame-Options' not in r.headers:
-            x_frame.append('Missing Header/Missing anti-framing policy - X-Frame-Options')
+            x_frame.append('Missing Header - X-Frame-Options')
         else: 
             x_frame.append(r.headers['X-Frame-Options'])
     else:
